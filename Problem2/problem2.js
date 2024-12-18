@@ -7,18 +7,13 @@ You can return the answer in any order.
  */
 
 
-let twoSum = function (nums, target) {
-    for (let i = 0; i < nums.length; i++) {
-        for (let j = i + 1; j < nums.length; j++) {
-            if (nums[i] + nums[j] === target) {
-                return [i, j]
-            }
-
-        }
-    }
+let isPalindrome = function (num) {
+    numReversed = parseInt(num.toString().split("").reverse().join(""));
+    if (num === numReversed) return true
+    else return false
 }
-
-twoSum([2, 7, 11, 15], 9);
-twoSum([3, 2, 4], 6);
+isPalindrome(121);
+isPalindrome(-121);
+isPalindrome(10);
 
 
