@@ -15,6 +15,7 @@ You can return the answer in any order.
             }
         }
     }
+    throw new Error("No two sum solution");
  }
 
  console.log(twoSum([2,7,11,15],9));
