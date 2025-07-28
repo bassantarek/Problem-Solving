@@ -1,4 +1,4 @@
-/* 
+/*
 Given an integer x, return true if x is a palindrome, and false otherwise.
 
  
@@ -19,12 +19,9 @@ Input: x = 10
 Output: false
 Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
  */
-
-
-function isPalindrome(num: number): boolean {
-    let isReversedNum = parseInt(num.toString().split('').reverse().join(''));
+function isPalindrome(num) {
+    var isReversedNum = parseInt(num.toString().split('').reverse().join(''));
     return isReversedNum === num ? true : false;
 }
-
-console.log('isReversedNum',isPalindrome(121));
-console.log('isReversedNum',isPalindrome(1222));
+console.log('isReversedNum', isPalindrome(121));
+console.log('isReversedNum', isPalindrome(1222));
