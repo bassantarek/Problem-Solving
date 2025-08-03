@@ -1,27 +1,38 @@
 /*
-Given an integer x, return true if x is a palindrome, and false otherwise.
+Write a function to find the longest common prefix string amongst an array of strings.
+
+If there is no common prefix, return an empty string "".
 
  
 
 Example 1:
 
-Input: x = 121
-Output: true
-Explanation: 121 reads as 121 from left to right and from right to left.
+Input: strs = ["flower","flow","flight"]
+Output: "fl"
 Example 2:
 
-Input: x = -121
-Output: false
-Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
-Example 3:
+Input: strs = ["dog","racecar","car"]
+Output: ""
+Explanation: There is no common prefix among the input strings.
+ 
 
-Input: x = 10
-Output: false
-Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
+Constraints:
+
+1 <= strs.length <= 200
+0 <= strs[i].length <= 200
+strs[i] consists of only lowercase English letters if it is non-empty.
  */
-function isPalindrome(num) {
-    var isReversedNum = parseInt(num.toString().split('').reverse().join(''));
-    return isReversedNum === num ? true : false;
+function longestCommonPrefix(strs) {
+    var str = strs[0];
+    for (var i = 0; i < strs.length; i++) {
+        for (var j = 0; j < str.length; j++) {
+            if (strs[i][j] !== str[j]) {
+                str = str.slice(0, j);
+            }
+        }
+    }
+    return str;
 }
-console.log('isReversedNum', isPalindrome(121));
-console.log('isReversedNum', isPalindrome(1222));
+;
+console.log("Input 📢📢", longestCommonPrefix(["flower", "flow", "flight"]));
+console.log("Input 📢📢", longestCommonPrefix(["dog", "racecar", "car"]));

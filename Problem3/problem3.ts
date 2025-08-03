@@ -22,3 +22,20 @@ Constraints:
 0 <= strs[i].length <= 200
 strs[i] consists of only lowercase English letters if it is non-empty.
  */
+
+
+
+function longestCommonPrefix(strs: string[]): string {
+    let str = strs[0];
+    for (let i = 0; i < strs.length; i++) {
+        for (let j = 0; j < str.length; j++) {
+            if (strs[i][j] !== str[j]) {
+                str = str.slice(0, j);
+            }
+        }
+    }
+    return str;
+};
+
+console.log("Input 📢📢", longestCommonPrefix(["flower", "flow", "flight"]));
+console.log("Input 📢📢", longestCommonPrefix(["dog", "racecar", "car"]));
